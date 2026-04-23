@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Home.module.css";
+import styles from "./home.module.css";
 
 import githubIcon from "../../assets/icons/github.png";
 import pokemonIcon from "../../assets/icons/pokemon.png";
