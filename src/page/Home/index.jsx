@@ -199,14 +199,15 @@ export default function Home() {
 						<div>
 							<h1 className={styles.detailTitle}>{api.name}</h1>
 							<p className={styles.detailDescription}>{api.description}</p>
-							<div className={styles.detailFooter}>
-								<button className={styles.detailBtn}>
-									{api.deploy}
-									<span>- /</span>
-								</button>
-							</div>
 						</div>
 						<span className={styles.detailEmoji}>{api.emoji}</span>
+					</div>
+
+					<div className={styles.detailFooter}>
+						<button className={styles.detailBtn}>
+							{api.deploy}
+							<span>Acessar Site</span>
+						</button>
 					</div>
 
 					<div className={styles.statsGrid}>
@@ -243,42 +244,6 @@ export default function Home() {
 								📋
 							</button>
 						</div>
-					</div>
-
-					<div className={styles.section}>
-						<h3 className={styles.sectionTitle}>Exemplo de Endpoint</h3>
-						<div className={styles.codeBlock}>
-							<code>{api.endpoint}</code>
-							<button
-								className={styles.copyButton}
-								onClick={() => {
-									copyToClipboard(api.endpoint);
-									alert("Endpoint copiado!");
-								}}
-								title="Copiar"
-							>
-								📋
-							</button>
-						</div>
-					</div>
-
-					<div className={styles.section}>
-						<h3 className={styles.sectionTitle}>Casos de Uso no Lab</h3>
-						<ul className={styles.casesList}>
-							{api.cases.map((caseItem, idx) => (
-								<li key={idx}>
-									<span className={styles.caseIcon}>→</span>
-									{caseItem}
-								</li>
-							))}
-						</ul>
-					</div>
-
-					<div className={styles.section}>
-						<h3 className={styles.sectionTitle}>Resposta Típica</h3>
-						<pre className={styles.responseBlock}>
-							{JSON.stringify(api.response, null, 2)}
-						</pre>
 					</div>
 				</div>
 			</div>

@@ -17,9 +17,9 @@ export const AppRouter = () => {
 				<Route path="/github" element={<GitHub />} />
 				<Route path="/jsonplaceholder" element={<JsonPlaceholder />} />
 				<Route path="/pokemon" element={<Pokemon />} />
-				<Route path="/pokemon" element={<RickAndMorty />} />
+				<Route path="/rickandmorty" element={<RickAndMorty />} />
 				<Route path="/unsplash" element={<Unsplash />} />
-				<Route path="/pokemon" element={<Weather />} />
+				<Route path="/weather" element={<Weather />} />
 
 				<Route path="*" element={<NotFound />} />
 			</Routes>
