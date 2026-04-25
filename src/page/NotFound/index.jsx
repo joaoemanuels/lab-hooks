@@ -1,4 +1,4 @@
-export default function JsonPlaceholder() {
+export default function NotFound() {
 	return (
 		<main>
 			<h1>teste</h1>
