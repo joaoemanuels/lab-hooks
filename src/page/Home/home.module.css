@@ -347,6 +347,7 @@ body {
 
 .detailEmoji {
 	font-size: 3rem;
+	width: 60px;
 	flex-shrink: 0;
 }
 

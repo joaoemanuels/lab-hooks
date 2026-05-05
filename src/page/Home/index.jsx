@@ -7,9 +7,11 @@ import weatherIcon from "../../assets/icons/weather.png";
 import jsonIcon from "../../assets/icons/json.png";
 import unsplashIcon from "../../assets/icons/unsplash.png";
 import rickmortyIcon from "../../assets/icons/rickmorty.png";
+import { useNavigate } from "react-router";
 
 export default function Home() {
 	const [selectedApi, setSelectedApi] = useState(null);
+	const navigate = useNavigate();
 
 	const apis = [
 		{
@@ -38,7 +40,7 @@ export default function Home() {
 			},
 		},
 		{
-			id: "openweather",
+			id: "weather",
 			name: "OpenWeatherMap",
 			emoji: weatherIcon,
 			description:
@@ -200,12 +202,18 @@ export default function Home() {
 							<h1 className={styles.detailTitle}>{api.name}</h1>
 							<p className={styles.detailDescription}>{api.description}</p>
 						</div>
-						<span className={styles.detailEmoji}>{api.emoji}</span>
+						<img
+							src={api.emoji}
+							alt={api.name}
+							className={styles.detailEmoji}
+						/>
 					</div>
 
 					<div className={styles.detailFooter}>
-						<button className={styles.detailBtn}>
-							{api.deploy}
+						<button
+							className={styles.detailBtn}
+							onClick={() => navigate(`/${api.id}`)}
+						>
 							<span>Acessar Site</span>
 						</button>
 					</div>
