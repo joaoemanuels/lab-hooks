@@ -10,7 +10,7 @@ import { fetchPokemon } from "../../services/pokemon";
 
 export default function Pokemon() {
 	const [pokemon, setPokemon] = useState(null);
-	const [search, setSearch] = useState("626");
+	const [search, setSearch] = useState("25");
 
 	const loadPokemon = async (name) => {
 		try {
@@ -24,7 +24,30 @@ export default function Pokemon() {
 
 	useEffect(() => {
 		loadPokemon(search);
-	}, [search]);
+	}, []);
+
+	const handleSearch = () => {
+		if (!search) return;
+		loadPokemon(search);
+	};
+
+	const handleNext = () => {
+		if (!pokemon) return;
+		const nextId = pokemon.id + 1;
+
+		setSearch(nextId.toString());
+		loadPokemon(nextId);
+	};
+
+	const handlePrev = () => {
+		if (!pokemon) return;
+		const prevId = pokemon.id - 1;
+
+		if (prevId < 1) return;
+
+		setSearch(prevId.toString());
+		loadPokemon(prevId);
+	};
 
 	return (
 		<main>
@@ -39,9 +62,13 @@ export default function Pokemon() {
 
 			<PokedexText name={pokemon?.name} id={pokemon?.id} />
 
-			<PokedexForm search={search} setSearch={setSearch} />
+			<PokedexForm
+				search={search}
+				setSearch={setSearch}
+				onSearch={handleSearch}
+			/>
 
-			<PokedexBtn onSearch={() => loadPokemon(search)} />
+			<PokedexBtn onNext={handleNext} onPrev={handlePrev} />
 
 			<img src={pokedex} alt="pokedex" className={styles.pokedex} />
 		</main>
