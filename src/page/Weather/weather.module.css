@@ -1,15 +1,12 @@
-body {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-p {
-  margin: 0;
+.app {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 16px;
+	box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 .app_container {
@@ -17,25 +14,60 @@ p {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 40px;
+	gap: 24px;
 	background: linear-gradient(to bottom, #005f99, #001f3f);
 	color: white;
-	padding: 40px 16px;
+	padding: 24px 16px;
 	border-radius: 24px;
-	min-width: 360px;
+	width: 100%;
+	max-width: 600px;
+	box-sizing: border-box;
 }
 
 .app_container h1 {
 	margin: 0px;
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: 600;
 	text-align: center;
+	width: 100%;
 }
 
 .app_container h1 > span {
 	margin: 0px;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 400;
 	display: block;
 	text-align: center;
+}
+
+.app_container p {
+	margin: 0;
+}
+
+@media (min-width: 768px) {
+	.app_container {
+		gap: 32px;
+		padding: 32px 24px;
+		border-radius: 32px;
+	}
+
+	.app_container h1 {
+		font-size: 28px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.app {
+		padding: 32px;
+	}
+
+	.app_container {
+		gap: 40px;
+		padding: 40px 32px;
+		max-width: 700px;
+	}
+
+	.app_container h1 {
+		font-size: 32px;
+	}
 }

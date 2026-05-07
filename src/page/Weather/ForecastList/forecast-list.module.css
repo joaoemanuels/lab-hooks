@@ -1,5 +1,23 @@
 .forecast_lists {
 	display: flex;
 	gap: 8px;
+	width: 100%;
+	max-width: 328px;
+	flex-wrap: wrap;
+	justify-content: center;
+	box-sizing: border-box;
 }
 
+@media (min-width: 768px) {
+	.forecast_lists {
+		gap: 12px;
+		max-width: 380px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.forecast_lists {
+		gap: 16px;
+		max-width: 420px;
+	}
+}
