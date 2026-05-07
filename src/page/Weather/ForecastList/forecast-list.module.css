@@ -1,0 +1,5 @@
+.forecast_lists {
+	display: flex;
+	gap: 8px;
+}
+
