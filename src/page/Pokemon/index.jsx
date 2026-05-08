@@ -5,8 +5,9 @@ import pokedex from "../../assets/images/pokedex.png";
 import PokedexForm from "./sections/PokedexForm";
 import PokedexText from "./sections/PokedexText";
 
+import PokedexBtn from "./sections/PokedexText";
+
 import { fetchPokemon } from "../../services/pokemon";
-import PokedexBtn from "./sections/pokedexBtn";
 
 export default function Pokemon() {
 	const [pokemon, setPokemon] = useState(null);
