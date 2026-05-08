@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import styles from "./pokemon.module.css";
 
 import pokedex from "../../assets/images/pokedex.png";
-import PokedexForm from "./sections/pokedexForm";
-import PokedexBtn from "./sections/pokedexBtn";
+import PokedexForm from "./sections/PokedexForm";
+import PokedexBtn from "./sections/PokedexBtn";
 import PokedexText from "./sections/PokedexText";
 
 import { fetchPokemon } from "../../services/pokemon";
