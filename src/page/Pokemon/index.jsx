@@ -5,7 +5,7 @@ import pokedex from "../../assets/images/pokedex.png";
 import PokedexForm from "./sections/PokedexForm";
 import PokedexText from "./sections/PokedexText";
 
-import PokedexBtn from "./sections/PokedexText";
+import PokedexBtn from "./sections/PokedexBtn";
 
 import { fetchPokemon } from "../../services/pokemon";
 
