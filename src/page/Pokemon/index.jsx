@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import styles from "./pokemon.module.css";
 
 import pokedex from "../../assets/images/pokedex.png";
-import PokedexForm from "./sections/PokedexForm";
-import PokedexBtn from "./sections/PokedexBtn";
-import PokedexText from "./sections/PokedexText";
+import PokedexForm from "./sections/PokemonForm";
+import PokedexBtn from "./sections/PokemonBtn";
+import PokedexText from "./sections/PokemonText";
 
 import { fetchPokemon } from "../../services/pokemon";
 
