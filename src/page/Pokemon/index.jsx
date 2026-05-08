@@ -3,10 +3,10 @@ import styles from "./pokemon.module.css";
 
 import pokedex from "../../assets/images/pokedex.png";
 import PokedexForm from "./sections/PokedexForm";
-import PokedexBtn from "./sections/PokemonBtn";
 import PokedexText from "./sections/PokedexText";
 
 import { fetchPokemon } from "../../services/pokemon";
+import PokedexBtn from "./sections/pokedexBtn";
 
 export default function Pokemon() {
 	const [pokemon, setPokemon] = useState(null);
