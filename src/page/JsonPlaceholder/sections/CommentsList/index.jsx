@@ -1,33 +1,10 @@
-import { useState } from "react";
-
 import styles from "./comments-list.module.css";
 
-export default function CommentsList() {
-	const [mockComments] = useState([
-		{
-			id: 1,
-			text: "id labore ex et quam laborum",
-			author: "User 1",
-		},
-		{
-			id: 2,
-			text: "quo vero reiciendis velit similique earum",
-			author: "User 2",
-		},
-		{
-			id: 3,
-			text: "odio adipisci rerum aut animi",
-			author: "User 3",
-		},
-	]);
-
+export default function CommentsList({ comments }) {
 	return (
 		<div className={styles["comments-list"]}>
-			{mockComments.map((comment) => (
-				<div
-					key={comment.id}
-					className={styles["comment-item"]}
-				>
+			{comments.map((comment) => (
+				<div key={comment.id} className={styles["comment-item"]}>
 					<div className={styles["comment-avatar"]}>
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
 							<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -35,13 +12,9 @@ export default function CommentsList() {
 					</div>
 
 					<div className={styles["comment-content"]}>
-						<p className={styles["comment-text"]}>
-							{comment.text}
-						</p>
+						<p className={styles["comment-text"]}>{comment.name}</p>
 
-						<p className={styles["comment-author"]}>
-							Por {comment.author}
-						</p>
+						<p className={styles["comment-author"]}>Por {comment.email}</p>
 					</div>
 				</div>
 			))}
