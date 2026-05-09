@@ -1,53 +1,8 @@
-import { useState } from "react";
 import PostCard from "../PostCard";
 
 import styles from "./post-list.module.css";
 
-export default function PostsList({ onSelectPost, selectedPostId }) {
-	// Estrutura de dados de exemplo - você substituirá com consumo da API
-	const [mockPosts] = useState([
-		{
-			id: 1,
-			title:
-				"sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-			excerpt:
-				"quia et suscipit suscipit recusandae consequuntur expedita et cum...",
-			author: "User 1",
-			comments: 10,
-		},
-		{
-			id: 2,
-			title: "qui est esse",
-			excerpt:
-				"est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores...",
-			author: "User 1",
-			comments: 5,
-		},
-		{
-			id: 3,
-			title: "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-			excerpt:
-				"et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad...",
-			author: "User 1",
-			comments: 2,
-		},
-		{
-			id: 4,
-			title: "eum et est occaecati",
-			excerpt:
-				"ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda...",
-			author: "User 1",
-			comments: 1,
-		},
-		{
-			id: 5,
-			title: "nesciunt quas odio",
-			excerpt:
-				"repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est...",
-			author: "User 1",
-			comments: 7,
-		},
-	]);
+export default function PostsList({ onSelectPost, selectedPostId, posts }) {
 
 	return (
 		<section className={styles["posts-section"]}>
@@ -77,10 +32,11 @@ export default function PostsList({ onSelectPost, selectedPostId }) {
 			</div>
 
 			<div className={styles["posts-list"]}>
-				{mockPosts.map((post) => (
+				{posts.map((post) => (
 					<PostCard
 						key={post.id}
 						post={post}
+						comments={post.comments}
 						isSelected={selectedPostId === post.id}
 						onSelect={() => onSelectPost(post)}
 					/>

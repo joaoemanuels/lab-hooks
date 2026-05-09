@@ -2,13 +2,10 @@ import CommentsList from "../CommentsList";
 
 import styles from "./post-details.module.css";
 
-export default function PostDetails({ post, onClose }) {
+export default function PostDetails({ post, comments, onClose }) {
 	return (
 		<aside className={styles["post-details"]}>
-			<button
-				className={styles["close-btn"]}
-				onClick={onClose}
-			>
+			<button className={styles["close-btn"]} onClick={onClose}>
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
 					<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
 				</svg>
@@ -37,13 +34,11 @@ export default function PostDetails({ post, onClose }) {
 			</div>
 
 			<div className={styles["details-content"]}>
-				<div className={styles["post-label"]}>
-					Post #1
-				</div>
+				<div className={styles["post-label"]}>Post #1</div>
 
 				<p className={styles["details-body"]}>
-					{post.excerpt} molestiae ut et quas totam nostrum rerum est autem
-					sunt rem eveniet architecto
+					{post.excerpt} molestiae ut et quas totam nostrum rerum est autem sunt
+					rem eveniet architecto
 				</p>
 
 				<p className={styles["details-body"]}>
@@ -60,7 +55,7 @@ export default function PostDetails({ post, onClose }) {
 			</div>
 
 			<div className={styles["comments-section"]}>
-				<h3>Comentários ({post.comments})</h3>
+				<h3>Comentários ({post.comments.length})</h3>
 
 				<CommentsList />
 			</div>

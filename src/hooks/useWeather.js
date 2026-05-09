@@ -31,6 +31,7 @@ export function useWeather() {
 			} else {
 				setError("Não foi possível obter os dados do clima.");
 			}
+			
 		} catch (err) {
 			setError("Erro ao buscar clima: " + err);
 		} finally {

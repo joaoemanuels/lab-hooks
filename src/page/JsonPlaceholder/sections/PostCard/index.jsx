@@ -1,6 +1,6 @@
 import styles from "./post-card.module.css";
 
-export default function PostCard({ post, isSelected, onSelect }) {
+export default function PostCard({ post, comments, isSelected, onSelect }) {
 	return (
 		<article
 			className={`${styles["post-card"]} ${isSelected ? styles.selected : ""}`}
@@ -9,7 +9,7 @@ export default function PostCard({ post, isSelected, onSelect }) {
 			<div className={styles["post-card-left"]}>
 				<h3 className={styles["post-card-title"]}>{post.title}</h3>
 
-				<p className={styles["post-card-excerpt"]}>{post.excerpt}</p>
+				<p className={styles["post-card-excerpt"]}>{post.body}</p>
 			</div>
 
 			<div className={styles["post-card-footer"]}>
@@ -26,7 +26,7 @@ export default function PostCard({ post, isSelected, onSelect }) {
 						<path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm13 8H6v-2h13v2zm0-4H6V11h13v2z" />
 					</svg>
 
-					<span>{post.comments} comentários</span>
+					<span>{comments.length} comentários</span>
 				</div>
 			</div>
 
